@@ -8,13 +8,14 @@ $( document ).ready(function() {
     $.facebox.settings.loadingImage = '/dmp/images/vendor/facebox/loading.gif';
 
     
+    /*
     $('form').dirtyForms();
 
     $.DirtyForms.debug = false;    
     $.DirtyForms.title = 'Achtung!';
     $.DirtyForms.message = 'Ungesicherte Änderungen in Ihrem Datenmanagementplan!';
     $.DirtyForms.dirtyClass = 'red'; 
-    
+    */
     
     $('a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

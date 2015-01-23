@@ -285,24 +285,28 @@ class PlanController extends BaseController
                                 break;
                             
                             case 'list':
+                                //Debugbar::info( $input_answer );
                                 if( count( $input_answer ) > 0 )
                                 {
-                                    $answer_list_item_array = explode(',', $input_answer[0]);
-                                    
-                                    foreach( $answer_list_item_array as $answer_list_item )
+                                    if( !in_array( '',$input_answer ) )
                                     {
-                                        $new_list_answer = new ListAnswer;
-                                        $new_list_answer->plan_id = $plan->id;
-                                        $new_list_answer->question_id = $question_id;
-                                        $new_list_answer->text = $answer_list_item;
-                                        $new_list_answer->save();
+                                        $answer_list_item_array = explode(',', $input_answer[0]);
 
-                                        $new_question_answer_rel = new QuestionAnswerRel;
-                                        $new_question_answer_rel->plan_id = $plan->id;
-                                        $new_question_answer_rel->question_id = $question_id;
-                                        $new_question_answer_rel->user_id = Auth::user()->id;
-                                        $new_question_answer_rel->list_answer_id = $new_list_answer->id;
-                                        $new_question_answer_rel->save();  
+                                        foreach( $answer_list_item_array as $answer_list_item )
+                                        {
+                                            $new_list_answer = new ListAnswer;
+                                            $new_list_answer->plan_id = $plan->id;
+                                            $new_list_answer->question_id = $question_id;
+                                            $new_list_answer->text = $answer_list_item;
+                                            $new_list_answer->save();
+
+                                            $new_question_answer_rel = new QuestionAnswerRel;
+                                            $new_question_answer_rel->plan_id = $plan->id;
+                                            $new_question_answer_rel->question_id = $question_id;
+                                            $new_question_answer_rel->user_id = Auth::user()->id;
+                                            $new_question_answer_rel->list_answer_id = $new_list_answer->id;
+                                            $new_question_answer_rel->save();  
+                                        }
                                     }
                                 }
                                 break;    

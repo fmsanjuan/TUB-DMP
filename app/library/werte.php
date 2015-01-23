@@ -1,0 +1,1 @@
+Audioaufnahmen|Beobachtungsdaten|Messdaten|Simulationsdaten|Video-Interviews|Andere

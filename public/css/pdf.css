@@ -1,0 +1,70 @@
+body {
+    width: 210mm;
+}
+
+body * {
+    outline: 0px #336699 solid;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12pt;
+}
+
+ol#plan-toc {
+    page-break-after: always;	
+}
+
+ol#plan-toc li {
+    line-height: 1.2em !important;
+    margin-bottom: 0.5em;    
+}
+
+ol#plan-toc li a {
+    color: #000;
+    text-decoration: none;
+    fon-weight: bold;
+}
+
+.section-header {
+    margin-top: 0 !important;
+}
+
+.section-header h3 {
+    /*
+    background-color: #C50E1F;
+    border-radius: 6px 6px 6px 6px;
+    color: #FFFFFF;
+    font-size: 130%;
+    font-weight: bold;
+    padding: 2mm;
+    margin: 0 !important;    
+    */
+}
+
+.pdf-container {
+    outline: 0px #336699 dotted;    
+    margin-top: 10mm;
+    margin-left: 10mm;
+    margin-right: 45mm;
+    
+    /*width: 80%;*/    
+}
+
+div.question-answer-set {
+    page-break-inside:avoid;
+}
+
+span.question-text, span.answer-text {
+    width: 80%;
+}
+
+span.answer-prepend, span.answer-append {
+    font-weight: normal;
+}
+
+.new-page {
+    page-break-after:always;    
+    /*margin-top: 10mm;*/
+}
+
+.new-page:last-child {
+    page-break-after: avoid;
+}

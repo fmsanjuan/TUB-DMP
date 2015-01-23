@@ -1,0 +1,5 @@
+#AuthType Shibboleth
+#Require Shibboleth
+#ShibUseHeaders On
+#ShibRequireSession Off
+#ShibRequestSetting isPassive Off

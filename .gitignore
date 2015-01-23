@@ -1,0 +1,19 @@
+# Composer Lock File
+# composer.lock
+
+# Artisan Script
+artisan
+
+# Markdown Files
+*.md
+
+# SQL Files
+*.sql
+
+# Directories
+/vendor/
+stuff/
+files/
+
+# Netbeans Project Metadata
+nbproject/

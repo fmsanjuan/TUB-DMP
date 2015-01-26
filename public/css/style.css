@@ -295,3 +295,7 @@ span.slider-range-display-omega {
 span.slider-value {
     margin-left: 15px;
 }
+
+.progress-bar {
+    background-color: #c50e1f !important;
+}

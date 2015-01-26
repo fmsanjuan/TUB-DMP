@@ -31,6 +31,10 @@ class CreateInstitutionsTable extends Migration {
                     ->default(0);
             
             $table
+                    ->boolean("active")
+                    ->default(0);
+            
+            $table
                     ->nullableTimestamps();
             
             /*

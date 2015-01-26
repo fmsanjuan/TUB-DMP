@@ -76,6 +76,12 @@ class InputTypesTableSeeder extends Seeder
             'id' => 12,
             'name' => 'Ja/Nein',
             'method' => 'boolean'
-        ));        
+        ));
+        
+        InputType::create(array(
+            'id' => 13,
+            'name' => 'Plain (not editable)',
+            'method' => 'plain'
+        ));
     }
 }

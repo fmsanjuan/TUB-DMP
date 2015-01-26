@@ -492,6 +492,212 @@ class QuestionsTableSeeder extends Seeder
             'input_type_id' => 6
         )); 
         
+        
+        
+        
+        
+        
+        
+        
+        Question::create(array(
+            'id' => 101,
+            'template_id' => 3,
+            'section_id' => 11,
+            'keynumber' => '1',
+            'order' => 1,
+            'text' => 'ID',
+            'guidance' => 'A pertinent ID as determined by the funder and/or institution',
+            'input_type_id' => 1
+        ));
+        
+        Question::create(array(
+            'id' => 102,
+            'template_id' => 3,
+            'section_id' => 11,
+            'keynumber' => '2',
+            'order' => 2,
+            'text' => 'Funder',
+            'guidance' => 'State research funder if relevant',
+            'input_type_id' => 1
+        )); 
+        
+        Question::create(array(
+            'id' => 103,
+            'template_id' => 3,
+            'section_id' => 11,
+            'keynumber' => '3',
+            'order' => 3,
+            'text' => 'Grant Reference Number',
+            'guidance' => 'Enter grant reference number if applicable [POST-AWARD DMPs ONLY]',
+            'input_type_id' => 1
+        ));
+        
+        Question::create(array(
+            'id' => 104,
+            'template_id' => 3,
+            'section_id' => 11,
+            'keynumber' => '4',
+            'order' => 4,
+            'text' => 'Project Name',
+            'guidance' => 'If applying for funding, state the name exactly as in the grant proposal',
+            'input_type_id' => 1
+        ));
+        
+        Question::create(array(
+            'id' => 105,
+            'template_id' => 3,
+            'section_id' => 11,
+            'keynumber' => '5',
+            'order' => 5,
+            'text' => 'Project Description',
+            'guidance' => 'Questions to consider: What is the nature of your research project? What research questions are you addressing? For what purpose are the data being collected or created? Briefly summarise the type of study (or studies) to help others understand the purposes for which the data are being collected or created.',
+            'input_type_id' => 2
+        ));
+        
+        Question::create(array(
+            'id' => 106,
+            'template_id' => 3,
+            'section_id' => 11,
+            'keynumber' => '6',
+            'order' => 6,
+            'text' => 'PI / Researcher',
+            'guidance' => 'Name of Principal Investigator(s) or main researcher(s) on the project',
+            'input_type_id' => 5
+        ));
+        
+        Question::create(array(
+            'id' => 107,
+            'template_id' => 3,
+            'section_id' => 11,
+            'parent_question_id' => 106,
+            'text' => 'PI / Researcher ID',
+            'guidance' => 'E.g ORCID',
+            'input_type_id' => 1
+        ));
+        
+        Question::create(array(
+            'id' => 108,
+            'template_id' => 3,
+            'section_id' => 11,
+            'keynumber' => '7',
+            'order' => 7,
+            'text' => 'Project Data Contact',
+            'guidance' => 'Name (if different to above), telephone and email contact details',
+            'input_type_id' => 2
+        ));
+        
+        Question::create(array(
+            'id' => 109,
+            'template_id' => 3,
+            'section_id' => 11,
+            'keynumber' => '8',
+            'order' => 8,
+            'text' => 'Date of First Version',
+            'guidance' => 'Date the first version of the DMP was completed',
+            'input_type_id' => 8
+        ));
+        
+        Question::create(array(
+            'id' => 110,
+            'template_id' => 3,
+            'section_id' => 11,
+            'keynumber' => '9',
+            'order' => 9,
+            'text' => 'Date of Last Update',
+            'guidance' => 'Date the DMP was last changed',
+            'input_type_id' => 8
+        ));
+        
+        Question::create(array(
+            'id' => 111,
+            'template_id' => 3,
+            'section_id' => 11,
+            'keynumber' => '10',
+            'order' => 10,
+            'text' => 'Related Policies',
+            'guidance' => 'Questions to consider: Are there any existing procedures that you will base your approach on? Does your department/group have data management guidelines? Does your institution have a data protection or security policy that you will follow? Does your institution have a Research Data Management (RDM) policy? Does your funder have a Research Data Management policy? Are there any formal standards that you will adopt? Guidance: List any other relevant funder, institutional, departmental or group policies on data management, data sharing and data security. Some of the information you give in the remainder of the DMP will be determined by the content of other policies. If so, point/link to them here.',
+            'input_type_id' => 2
+        ));
+        
+        Question::create(array(
+            'id' => 112,
+            'template_id' => 3,
+            'section_id' => 12,
+            'keynumber' => '1',
+            'order' => 1,
+            'text' => 'What data will you collect or create?',
+            'guidance' => 'Questions to consider: What type, format and volume of data? Do your chosen formats and software enable sharing and long-term access to the data? Are there any existing data that you can reuse? Guidance: Give a brief description of the data, including any existing data or third-party sources that will be used, in each case noting its content, type and coverage. Outline and justify your choice of format and consider the implications of data format and data volumes in terms of storage, backup and access.',
+            'input_type_id' => 2
+        ));
+        
+        Question::create(array(
+            'id' => 113,
+            'template_id' => 3,
+            'section_id' => 12,
+            'keynumber' => '2',
+            'order' => 2,
+            'text' => 'How will the data be collected or created?',
+            'guidance' => 'Questions to Consider: What standards or methodologies will you use? How will you structure and name your folders and files? How will you handle versioning? What quality assurance processes will you adopt? Guidance: Outline how the data will be collected/created and which community data standards (if any) will be used. Consider how the data will be organised during the project, mentioning for example naming conventions, version control and folder structures. Explain how the consistency and quality of data collection will be controlled and documented. This may include processes such as calibration, repeat samples or measurements, standardised data capture or recording, data entry validation, peer review of data or representation with controlled vocabularies.',
+            'input_type_id' => 2
+        ));
+        
+        Question::create(array(
+            'id' => 114,
+            'template_id' => 3,
+            'section_id' => 13,
+            'keynumber' => '1',
+            'order' => 1,
+            'text' => 'What documentation and metadata will accompany the data?',
+            'guidance' => 'Questions to consider: What information is needed for the data to be to be read and interpreted in the future? How will you capture / create this documentation and metadata? What metadata standards will you use and why? Guidance: Describe the types of documentation that will accompany the data to help secondary users to understand and reuse it. This should at least include basic details that will help people to find the data, including who created or contributed to the data, its title, date of creation and under what conditions it can be accessed. Documentation may also include details on the methodology used, analytical and procedural information, definitions of variables, vocabularies, units of measurement, any assumptions made, and the format and file type of the data. Consider how you will capture this information and where it will be recorded. Wherever possible you should identify and use existing community standards.',
+            'input_type_id' => 2
+        ));
+        
+        Question::create(array(
+            'id' => 115,
+            'template_id' => 3,
+            'section_id' => 14,
+            'keynumber' => '1',
+            'order' => 1,
+            'text' => 'How will you manage any ethical issues?',
+            'guidance' => 'Questions to consider: Have you gained consent for data preservation and sharing? How will you protect the identity of participants if required? e.g. via anonymisation How will sensitive data be handled to ensure it is stored and transferred securely? Guidance: Ethical issues affect how you store data, who can see/use it and how long it is kept. Managing ethical concerns may include: anonymisation of data; referral to departmental or institutional ethics committees; and formal consent agreements. You should show that you are aware of any issues and have planned accordingly. If you are carrying out research involving human participants, you must also ensure that consent is requested to allow data to be shared and reused.',
+            'input_type_id' => 2
+        ));
+        
+        Question::create(array(
+            'id' => 116,
+            'template_id' => 3,
+            'section_id' => 14,
+            'keynumber' => '2',
+            'order' => 2,
+            'text' => 'How will you manage copyright and Intellectual Property Rights (IPR) issues?',
+            'guidance' => 'Questions to consider: Who owns the data? How will the data be licensed for reuse? Are there any restrictions on the reuse of third-party data? Will data sharing be postponed / restricted e.g. to publish or seek patents? Guidance: State who will own the copyright and IPR of any data that you will collect or create, along with the licence(s) for its use and reuse. For multi-partner projects, IPR ownership may be worth covering in a consortium agreement. Consider any relevant funder, institutional, departmental or group policies on copyright or IPR. Also consider permissions to reuse third-party data and any restrictions needed on data sharing.',
+            'input_type_id' => 2
+        ));
+        
+        Question::create(array(
+            'id' => 117,
+            'template_id' => 3,
+            'section_id' => 15,
+            'keynumber' => '1',
+            'order' => 1,
+            'text' => 'How will the data be stored and backed up during the research?',
+            'guidance' => 'Questions to consider: Do you have sufficient storage or will you need to include charges for additional services? How will the data be backed up? Who will be responsible for backup and recovery? How will the data be recovered in the event of an incident? Guidance: State how often the data will be backed up and to which locations. How many copies are being made? Storing data on laptops, computer hard drives or external storage devices alone is very risky. The use of robust, managed storage provided by university IT teams is preferable. Similarly, it is normally better to use automatic backup services provided by IT Services than rely on manual processes. If you choose to use a third-party service, you should ensure that this does not conflict with any funder, institutional, departmental or group policies, for example in terms of the legal jurisdiction in which data are held or the protection of sensitive data.',
+            'input_type_id' => 2
+        ));
+        
+        Question::create(array(
+            'id' => 118,
+            'template_id' => 3,
+            'section_id' => 16,
+            'keynumber' => '2',
+            'order' => 2,
+            'text' => 'How will you manage access and security?',
+            'guidance' => 'Questions to consider: What are the risks to data security and how will these be managed? How will you control access to keep the data secure? How will you ensure that collaborators can access your data securely? If creating or collecting data in the field how will you ensure its safe transfer into your main secured systems? Guidance: If your data is confidential (e.g. personal data not already in the public domain, confidential information or trade secrets), you should outline any appropriate security measures and note any formal standards that you will comply with e.g. ISO 27001.',
+            'input_type_id' => 2
+        ));
+        
+
+        
         /*
         Question::create(array(
             'template_id' => 1,

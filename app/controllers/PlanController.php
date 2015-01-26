@@ -36,10 +36,14 @@ class PlanController extends BaseController
             $template = Template::where( 'id', $plan->template_id )->first();
             $sections = Section::where( 'template_id', $template->id )->orderby('order')->get();
             $questions = Question::where( 'template_id', $template->id )->whereNull( 'parent_question_id' )->where( 'text', '!=', '' )->get();
+            $question_count = $questions->count();
+            $answer_count = QuestionAnswerRel::getAnswerCount( $plan );
+            $question_answer_percentage = round( ($answer_count / $question_count) * 100 );
+            
             //$filetype_selector = Template::getFileTypes();
             
             Session::flash('flash_success', 'Fragen geladen.');
-            return View::make( 'plan.edit', compact('plan','template','sections','questions','answers'));
+            return View::make( 'plan.edit', compact('plan','template','sections','questions','answers', 'question_count', 'answer_count', 'question_answer_percentage'));
         }
         else
         {

@@ -41,6 +41,22 @@ class QuestionAnswerRel extends Eloquent {
 	|--------------------------------------------------------------------------
 	*/    
     
+    public static function getAnswerCount( Plan $plan )
+    {
+        $questions = Template::getQuestions( $plan->template->id );
+        $count = 0;
+        foreach( $questions as $question )
+        {
+            Debugbar::info( $question->text );
+            if( !is_null( QuestionAnswerRel::getAnswer( $question, $plan, null ) ) )
+            {
+                //Debugbar::info( $question->text );
+                $count++;
+            }
+        }
+        return $count;
+    }
+    
     public static function getAnswer( Question $question, Plan $plan, $output = 'form' )
     {
         $option_input_value = array();

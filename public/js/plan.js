@@ -31,6 +31,11 @@ $( document ).ready(function() {
     $('.section-header').next("div.section-form").hide();   
     //$('.guidance').hide();
     $('div.bootstrap-tagsinput').addClass('col-md-12');
+    $('.progress .progress-bar').progressbar({
+        display_text: 'center'
+        //,refresh_speed: 200
+    });
+
     
     $(".section-header").click(function(){ // trigger
         $(this).next("div.section-form").slideToggle("fast"); // blendet beim Klick auf "dt" die nächste "dd" ein.

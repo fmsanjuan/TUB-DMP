@@ -33,9 +33,9 @@ $( document ).ready(function() {
     if( $('#flash').exists() ) {
         msg = $('#flash').attr('data');
         console.log( msg );
-        $('#basicModal').modal();
-        $("#basicModal .modal-body").text( msg );        
-        setTimeout(function() { $('#basicModal').modal('hide'); }, 50000);
+        //$('#basicModal').modal();
+        //$("#basicModal .modal-body").text( msg );        
+        //setTimeout(function() { $('#basicModal').modal('hide'); }, 500);
     }
     
     //if( $('#flash').exists() ) {

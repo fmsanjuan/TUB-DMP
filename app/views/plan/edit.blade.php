@@ -14,6 +14,7 @@
 
 @section('headline')
     <h3>Datenmanagementplan für Projekt {{ $plan->project_number }}</h3>
+    <br/>Vorlage: {{ $plan->template->name }}
 @stop
 
 @section('title')
@@ -21,13 +22,21 @@
 @stop
 
 @section('body')
+    
+    <p>
+        {{ $question_count }} Questions.<br/>
+        {{ $answer_count }} Answers ({{ $question_answer_percentage }} % beantwortet)<br/>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" data-transitiongoal="{{ $question_answer_percentage }}"></div>
+        </div>
+    </p>
 
     {{ Form::open(array('route' => 'save_plan', 'method' => 'post', 'class' => 'form-horizontal', 'id' => 'save_plan')) }}
         {{ Form::hidden( 'project_number', $plan->project_number) }}
 
         @foreach( $sections as $section )        
             <div class="row">
-                <div class="col-md-11">
+                <div class="col-md-12">
                     <div class="panel panel-primary">
                         
                         <div class="panel-heading section-header">
@@ -35,7 +44,7 @@
                             <a href="#" class="section-toggler closed">Details</a>
                         </div>
                         <div class="panel-body section-form">
-                            @foreach( $questions as $question )
+                            @foreach( $questions as $question )                                
                                 @if( $question->section_id == $section->id )                                
                                     <div class="row">
                                         <div class="form-group">
@@ -100,6 +109,7 @@
                         </div>
                     </div>
                 </div>
+                <!--
                 <div class="col-md-1 section-status">
                     
                     @if( false )
@@ -109,11 +119,12 @@
                             <span class="glyphicon glyphicon-exclamation-sign"></span>
                         @endif
                     @endif
-                    <!--
+                    /*
                     <span class="glyphicon glyphicon-ok-circle complete"></span>
                     <span class="glyphicon glyphicon-exclamation-sign incomplete"></span>
-                    -->
+                    */
                 </div>
+                -->
             </div>
        @endforeach                 
         

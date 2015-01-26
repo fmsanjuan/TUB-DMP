@@ -227,11 +227,16 @@
         {{ HTML::script('js/vendor/jquery-ui/jquery-ui.min.js'); }} 
        
        <!-- Bootstrap Slider
+            https://github.com/seiyria/bootstrap-slider
         ================================================== -->
        {{ HTML::script('js/vendor/bootstrap-slider/bootstrap-slider.seiyria.js'); }}
        {{ HTML::style('css/vendor/bootstrap-slider/bootstrap-slider.seiyria.css'); }}
 
-       
+       <!-- Bootstrap Progressbar
+            https://github.com/minddust/bootstrap-progressbar
+        ================================================== -->
+       {{ HTML::script('js/vendor/bootstrap-progressbar/bootstrap-progressbar.js'); }}
+       {{ HTML::style('css/vendor/bootstrap-progressbar/bootstrap-progressbar-3.1.1.css'); }}
        
         <!-- jGrowl
         FIXME

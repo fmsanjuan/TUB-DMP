@@ -1,5 +1,5 @@
 # Composer Lock File
-# composer.lock
+composer.lock
 
 # Artisan Script
 artisan
@@ -7,13 +7,19 @@ artisan
 # Markdown Files
 *.md
 
-# SQL Files
+# Database Files
 *.sql
+*.mwb
+
+# Configs
+app/config/database.php
 
 # Directories
 /vendor/
-stuff/
 files/
+
+# Logs & Sessions
+app/storage/
 
 # Netbeans Project Metadata
 nbproject/

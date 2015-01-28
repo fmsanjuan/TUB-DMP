@@ -6,14 +6,13 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"nesbot/Carbon": "*",        
-		"besimple/soap-bundle": "0.2.*@dev",
 		"barryvdh/laravel-dompdf": "dev-master",        
 		"jms/serializer": "0.14.*@dev",
         "psr/log": "1.0.0",
-        "simplesamlphp/simplesamlphp": "dev-master",
-		"saitswebuwm/shibboleth": "dev-master",
 		"barryvdh/laravel-debugbar": "~1.8@dev",
-		"swordapp/sword": "dev-master"
+		"swordapp/sword": "dev-master",
+		"phpoffice/phpword": "dev-master",
+		"vkharseev/laravel-phpword": "dev-master"
 	},
     "repositories": [
         {
@@ -41,8 +40,7 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php",
             
-            "app/library",
-            "app/providers"
+            "app/library"
 		]
 	},
 	"scripts": {

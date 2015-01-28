@@ -26,8 +26,6 @@ Route::get('/my/dashboard', array(
 ));
 
 
-
-
 // CREATE PLAN
 Route::post('/plan/new', array(
     'uses' => 'PlanController@create',
@@ -63,6 +61,35 @@ Route::get('/plan/{project_number}/pdf', array(
     'uses' => 'PlanController@getPDF',
     'as' => 'get_plan_as_pdf'
 ));
+
+// EXPORT PLAN AS 
+Route::get('/plan/{project_number}/export/{format}', array(
+    'uses' => 'PlanController@export',
+    'as' => 'get_plan_as_export'
+));
+
+
+
+/*
+function() {
+    $phpWord = new \PhpOffice\PhpWord\PhpWord();
+    $section = $phpWord->addSection();
+    // After creating a section, you can append elements:
+    $section->addText('Hello world!');
+    $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+    $objWriter->save('helloWorld.docx');
+    //var_dump( $phpWord );
+    
+    //$objPHPWord = new PHPWord();
+    //$section = $objPHPWord->createSection();
+    //$section->addText('Test PhpWord');
+    //$writer = PHPWord_IOFactory::createWriter($objPHPWord, 'Word2007');;
+    //$writer->save("testword.docx");
+    return Response::download('helloWorld.docx', 'helloWorld.docx');
+    
+    
+});
+*/
 
 // EXPORT PLAN AS XML
 Route::get('/plan/{project_number}/xml', array(
@@ -111,11 +138,6 @@ Route::get('/admin/template/{template_id}/edit', array(
     'uses' => 'TemplateController@editTemplate',
     'as' => 'edit_template'
 ));
-
-
-
-
-
 
 /*
 Route::post('/plan/quick_save', array(

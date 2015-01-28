@@ -17,8 +17,7 @@ ClassLoader::addDirectories(array(
 	app_path().'/controllers',
 	app_path().'/models',
 	app_path().'/database/seeds',
-    
-    app_path().'/providers',
+
     app_path().'/library',
 
 ));
@@ -123,9 +122,7 @@ Auth::extend('shibboleth', function($app) {
 });
 */
 
-
-Auth::extend('shibboleth', function( $app )
-{
-    return new \App\Providers\ShibbolethProvider;
-    
-});
+// disable DOMPDF's internal autoloader if you are using Composer
+define('DOMPDF_ENABLE_AUTOLOAD', false);
+// include DOMPDF's default configuration
+require_once '../vendor/dompdf/dompdf/dompdf_config.inc.php';

@@ -119,8 +119,6 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
         'Barryvdh\DomPDF\ServiceProvider',
-        //'KnightSwarm\LaravelSaml\LaravelSamlServiceProvider',
-        'Saitswebuwm\Shibboleth\ShibbolethServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
 	),
 
@@ -188,10 +186,11 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
         
-        'PDF' => 'Barryvdh\DomPDF\Facade',
-        //'SimpleSaml'      => 'KnightSwarm\LaravelSaml\Facades\Saml',
-        'Debugbar' => 'Barryvdh\Debugbar\Facade',
-        //'Providers'       => 'App\Providers',
+        'PDF'             => 'Barryvdh\DomPDF\Facade',
+        'Debugbar'        => 'Barryvdh\Debugbar\Facade',
+        //'Providers'     => 'App\Providers',
+        'PhpWord'         => '\PhpOffice\PhpWord\PhpWord',
+        'IOFactory'       => '\PhpOffice\PhpWord\IOFactory',
         
 
 	),

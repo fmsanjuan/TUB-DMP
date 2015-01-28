@@ -52,18 +52,47 @@ class PlanController extends BaseController
         }        
     }    
 
-    public function export( $project_number )
+    public function export( $project_number, $format = null )
     {
         $plan = Plan::where( 'project_number', $project_number )->first();
         if( count($plan) )
         {
-            return View::make( 'plan.export', compact('plan') );
+            if( !is_null($format) )
+            {
+                switch( $format )
+                {
+                    case 'word':
+                        return Exporters::getDOCX( $plan );
+                        break;
+                    case 'openoffice':
+                        return Exporters::getOTF( $plan );
+                        break;
+                    case 'html':
+                        return Exporters::getHTML( $plan );
+                        break;
+                    case 'rtf':
+                        return Exporters::getRTF( $plan );
+                        break;
+                    case 'pdf':
+                        return Exporters::getPDF( $plan );
+                        break;
+                    case 'xml':
+                        $document = new PhpWord();
+                        break;
+                    default:
+                        return $format;
+                        break;
+                }
+            }
+            else
+            {
+                return View::make( 'plan.export', compact('plan') );
+            }
         }
         else
         {
             return 'Kann keinen Plan mit dieser Projektnummer finden';            
         }
-            
     } 
 
     public function create()

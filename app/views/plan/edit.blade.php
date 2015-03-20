@@ -52,10 +52,6 @@
                                                 <span class="question-text">
                                                     {{ $section->keynumber }}.{{ $question->keynumber }}
                                                     {{ $question->text }}
-                                                    @if( $question->guidance )
-                                                        <a href="#" class="show-guidance">Info</a>
-                                                        <span class="guidance">{{ $question->guidance }}</span>                        
-                                                    @endif
                                                 </span>
                                                 
                                                 @if( $question->reference )
@@ -74,6 +70,9 @@
                                             </span>    
                                         </div>                                        
                                     </div>
+                                    @if( $question->guidance )
+                                        <div class="guidance">{{ $question->guidance }}</div>                        
+                                    @endif
                                     <?php
                                     $child_questions = Question::hasChildQuestions( $question );
                                     ?>

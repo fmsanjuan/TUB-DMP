@@ -157,8 +157,7 @@ class Exporters
     
     public static function getPDF( Plan $plan )
     {
-        define('PHPWORD_BASE_DIR', realpath(__DIR__));
-        $domPdfPath = realpath(PHPWORD_BASE_DIR . '/../vendor/dompdf/dompdf');
+        // PDF Parser Settings
         $pdf_parser_path = realpath('../vendor/dompdf/dompdf');
         $pdf_parser_name = 'DomPDF';
         \PhpOffice\PhpWord\Settings::setPdfRendererPath( $pdf_parser_path );
@@ -168,6 +167,12 @@ class Exporters
         $pdfLibraryPath = \PhpOffice\PhpWord\Settings::getPdfRendererPath();
         
         $document = Exporters::prepareDocument( $plan );
+        
+        //$file = public_path() . '/plans/' . $plan->project_number . '-' . $plan->updated_at->format('Ymd') . '.docx';
+        //$headers = array('Content-Type: application/docx');        
+        //$objWriter = IOFactory::createWriter($document, 'Word2007');
+        //$objWriter->save( $file );
+        
         $file = public_path() . '/plans/' . $plan->project_number . '-' . $plan->updated_at->format('Ymd') . '.pdf';
         $headers = array('Content-Type: application/pdf');        
         $objWriter = IOFactory::createWriter($document, 'PDF');

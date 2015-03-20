@@ -38,10 +38,7 @@ Form::macro('question_text', function( Question $question, $input_name, Array $i
     $html = '';    
     $html .= $question->prepend;
     $html .= Form::hidden( $input_name . '[]', 'text' );
-    //$html .= Form::Text( $input_name . '[]', $input_value[0], array('class' => 'question form-control', 'placeholder' => $question->guidance  ) );
-    $html .= Form::Text( $input_name . '[]', $input_value[0], array('class' => 'typeahead question form-control', 'placeholder' => $question->guidance ) );
-    
-    
+    $html .= Form::Text( $input_name . '[]', $input_value[0], array('class' => 'typeahead question form-control', 'title' => $question->guidance ) );
     $html .= $question->append;
     return $html;
 });
@@ -58,7 +55,7 @@ Form::macro('question_textarea', function( Question $question, $input_name, Arra
     $html = '';
     $html .= $question->prepend;
     $html .= Form::hidden( $input_name . '[]', 'text' );
-    $html .= Form::Textarea( $input_name . '[]', $input_value[0], array('rows' => '3', 'class' => 'question form-control') );
+    $html .= Form::Textarea( $input_name . '[]', $input_value[0], array('rows' => '3', 'class' => 'question form-control', 'title' => $question->guidance ) );
     $html .= $question->append;
     return $html;    
 });
@@ -76,7 +73,7 @@ Form::macro('question_select', function( Question $question, $input_name, Array 
     $html = '';
     $html .= $question->prepend;
     $html .= Form::hidden( $input_name . '[]', 'option' );
-    $html .= Form::select($input_name . '[]', $question_options, $input_value[0], array('class' => 'question form-control'));
+    $html .= Form::select($input_name . '[]', $question_options, $input_value[0], array('class' => 'question form-control', 'title' => $question->guidance ) );
     $html .= $question->append;
     return $html;
 });         
@@ -94,7 +91,7 @@ Form::macro('question_multiselect', function( Question $question, $input_name, A
     $html = '';
     $html .= $question->prepend;
     $html .= Form::hidden( $input_name . '[]', 'option' );
-    $html .= Form::select($input_name . '[]', $question_options, $input_value, array('class' => 'question form-control','multiple','size' => '5'));
+    $html .= Form::select($input_name . '[]', $question_options, $input_value, array('class' => 'question form-control','multiple','size' => '5', 'title' => $question->guidance));
     $html .= $question->append;
     return $html;
 });  
@@ -130,7 +127,7 @@ Form::macro('question_list', function( Question $question, $input_name, Array $i
     $html .= $question->prepend;
     $html .= '<div class="tagsinput">';
         $html .= Form::hidden( $input_name . '[]', 'list' );
-        $html .= Form::Text( $input_name . '[]', $list_string_value, array('class' => 'tags form-control', 'data-role' => 'tagsinput') );
+        $html .= Form::Text( $input_name . '[]', $list_string_value, array('class' => 'tags form-control', 'data-role' => 'tagsinput', 'title' => $question->guidance ) );
     $html .= '</div>';
     $html .= $question->append;
     return $html;    
@@ -167,7 +164,7 @@ Form::macro('question_checkboxes', function( Question $question, $input_name, Ar
         $html .= '<div class="checkbox">';
         $html .= '<label>';
         $html .= Form::hidden( $input_name . '[]', 'option' );        
-        $html .= Form::checkbox( $input_name . '[]', $option_value, $checked, array('class' => 'question-checkbox', 'autocomplete' => 'off') );        
+        $html .= Form::checkbox( $input_name . '[]', $option_value, $checked, array('class' => 'question-checkbox', 'autocomplete' => 'off', 'title' => $question->guidance ) );        
         $html .= $option_label;
         $html .= '</label>';
         $html .= '</div>';
@@ -212,7 +209,7 @@ Form::macro('question_radiobuttons', function( Question $question, $input_name, 
         $html .= '<div class="radio">';
             $html .= '<label>';
             $html .= Form::hidden( $input_name . '[]', 'option' );        
-            $html .= Form::radio( $input_name . '[]', $option_value, $checked, array('class' => 'question-radio', 'autocomplete' => 'off') );        
+            $html .= Form::radio( $input_name . '[]', $option_value, $checked, array('class' => 'question-radio', 'autocomplete' => 'off', 'title' => $question->guidance ) );        
             $html .= $option_label;
             if( $option_value == $default_value )
             {
@@ -237,7 +234,7 @@ Form::macro('question_date', function( Question $question, $input_name, Array $i
     $html = '';
     $html .= $question->prepend;
     $html .= Form::hidden( $input_name . '[]', 'text' );    
-    $html .= Form::Text( $input_name . '[]', $input_value[0], array('class' => 'question question-date form-control') );
+    $html .= Form::Text( $input_name . '[]', $input_value[0], array('class' => 'question question-date form-control', 'title' => $question->guidance ) );
     $html .= $question->append;
     return $html;
 });
@@ -265,9 +262,9 @@ Form::macro('question_daterange', function( Question $question, $input_name, Arr
     $html = '';
     $html .= $question->prepend;
     $html .= Form::hidden( $input_name . '[]', 'range' );
-    $html .= Form::Text( $input_name . '[]', $date_from, array('class' => 'question question-daterange form-control') );
+    $html .= Form::Text( $input_name . '[]', $date_from, array('class' => 'question question-daterange form-control', 'title' => $question->guidance ) );
     $html .= ' - ';
-    $html .= Form::Text( $input_name . '[]', $date_to, array('class' => 'question question-daterange form-control') );
+    $html .= Form::Text( $input_name . '[]', $date_to, array('class' => 'question question-daterange form-control', 'title' => $question->guidance ) );
     $html .= $question->append;
     return $html;
 });
@@ -287,7 +284,7 @@ Form::macro('question_value', function( Question $question, $input_name, Array $
     $html .= $question->prepend;
     $html .= '&nbsp;&nbsp;';    
     $html .= Form::hidden( $input_name . '[]', 'text' );    
-    $html .= Form::Text( $input_name . '[]', $input_value[0], array('class' => 'slider question', 'data-slider-min' => $param_array[0], 'data-slider-max' => $param_array[1], 'data-slider-step' => $param_array[2], 'data-slider-value' => $input_value[0] ) );
+    $html .= Form::Text( $input_name . '[]', $input_value[0], array('class' => 'slider question', 'data-slider-min' => $param_array[0], 'data-slider-max' => $param_array[1], 'data-slider-step' => $param_array[2], 'data-slider-value' => $input_value[0], 'title' => $question->guidance ) );
     $html .= '&nbsp;&nbsp;';
     $html .= '<span class="slider-value">' . $input_value[0] . '</span>';
     $html .= '&nbsp;&nbsp;';
@@ -326,7 +323,7 @@ Form::macro('question_valuerange', function( Question $question, $input_name, Ar
     $html .= $question->prepend;
     $html .= '&nbsp;&nbsp;';    
     $html .= Form::hidden( $input_name . '[]', 'range' );    
-    $html .= Form::Text( $input_name . '-slider-range', null, array('class' => 'slider-range question', 'data-slider-min' => $param_array[0], 'data-slider-max' => $param_array[1], 'data-slider-step' => $param_array[2], 'data-slider-value' => '[' . $alpha_omega . ']' ) );  
+    $html .= Form::Text( $input_name . '-slider-range', null, array('class' => 'slider-range question', 'data-slider-min' => $param_array[0], 'data-slider-max' => $param_array[1], 'data-slider-step' => $param_array[2], 'data-slider-value' => '[' . $alpha_omega . ']', 'title' => $question->guidance ) );  
     $html .= '&nbsp;&nbsp;';
     $html .= Form::hidden( $input_name . '[]', $alpha, array('class' => 'slider-range-input-alpha') ); 
     $html .= Form::hidden( $input_name . '[]', $omega, array('class' => 'slider-range-input-omega') ); 
@@ -391,7 +388,7 @@ Form::macro('question_boolean', function( Question $question, $input_name, Array
         $html .= '<div class="radio">';
         $html .= '<label>';
         $html .= Form::hidden( $input_name . '[]', 'option' );
-        $html .= Form::radio( $input_name . '[]', $option_value, $checked, array('class' => 'question-radio', 'autocomplete' => 'off') );        
+        $html .= Form::radio( $input_name . '[]', $option_value, $checked, array('class' => 'question-radio', 'autocomplete' => 'off', 'title' => $question->guidance ) );        
         $html .= $option_label;
         if( $option_value == $default_value )
         {

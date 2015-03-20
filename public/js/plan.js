@@ -27,9 +27,9 @@ var substringMatcher = function(strs) {
 
 
 $( document ).ready(function() {
-        
+       
     $('.section-header').next("div.section-form").hide();   
-    //$('.guidance').hide();
+    $('.guidance').hide();
     $('div.bootstrap-tagsinput').addClass('col-md-12');
     $('.progress .progress-bar').progressbar({
         display_text: 'center'
@@ -42,11 +42,47 @@ $( document ).ready(function() {
         $(this).children("a").toggleClass("closed open"); // wechselt beim Klick auf "dt" die Klasse des enthaltenen a-Tags von "closed" zu "open".
     });
     
+    $('.question').tooltip({
+        disabled: true,
+        position: {
+            my: "left-150",
+            at: "right+160"
+        },
+        show: {
+            delay: 0
+        },
+        hide: {
+            fixed: true,
+            delay: 0
+        }
+    }).on('focus', function () {
+        $(this)
+            .tooltip('enable')
+            .tooltip('open');
+    })
+    /*
+    .on('focusout', function () {
+        $(this)
+            .tooltip('close')
+            .tooltip('disable');
+    })
+    */
+    ;
+ 
+    /*
+    $('.question').on( 'focus', function() {
+        //tooltips.tooltip( "open" );
+        console.log( 'now show the tooltip' );
+    });
+    */
+    
+    
+    /* 
     $('a.show-guidance').on('click', function(e){
         e.preventDefault();
         $(this).next('.guidance').show();
     });
-    
+    */
     $('.tags').tagsinput({
         typeahead: {
             source: ['Amsterdam', 'Washington', 'Sydney', 'Beijing', 'Cairo']

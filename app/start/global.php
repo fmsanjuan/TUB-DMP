@@ -123,6 +123,6 @@ Auth::extend('shibboleth', function($app) {
 */
 
 // disable DOMPDF's internal autoloader if you are using Composer
-define('DOMPDF_ENABLE_AUTOLOAD', false);
+//define('DOMPDF_ENABLE_AUTOLOAD', false);
 // include DOMPDF's default configuration
-require_once '../vendor/dompdf/dompdf/dompdf_config.inc.php';
+//require_once '../vendor/dompdf/dompdf/dompdf_config.inc.php';

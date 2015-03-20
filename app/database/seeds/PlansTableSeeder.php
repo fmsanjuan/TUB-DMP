@@ -8,8 +8,8 @@ class PlansTableSeeder extends Seeder
         
         Plan::create(array(
             'name' => 'Testplan I',
-            'project_number' => '12345',
-            'template_id' => 1,            
+            'project_number' => '63914396',
+            'template_id' => 1,
             'user_id' => 1,
             'active' => 1
         ));

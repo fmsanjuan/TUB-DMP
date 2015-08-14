@@ -6,7 +6,7 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"nesbot/Carbon": "*",        
-		"barryvdh/laravel-dompdf": "dev-master",        
+		"barryvdh/laravel-dompdf": "0.4",        
 		"jms/serializer": "0.14.*@dev",
         "psr/log": "1.0.0",
 		"barryvdh/laravel-debugbar": "~1.8@dev",
